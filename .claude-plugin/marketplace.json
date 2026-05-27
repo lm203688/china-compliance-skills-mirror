@@ -1,0 +1,28 @@
+{
+  "name": "China Compliance Skills",
+  "description": "4 premium skills for Chinese content compliance: banned word detection, AI search visibility, data export assessment, and AIGC detection.",
+  "version": "1.0.0",
+  "author": "feichangai-team",
+  "skills": [
+    {
+      "name": "cn-compliance-guard",
+      "description": "Scan Chinese text for 200+ banned words (广告法/消费者权益保护法), check SEO compliance for 5 platforms, get safe replacement suggestions.",
+      "tags": ["compliance", "chinese", "advertising-law", "seo", "content-safety"]
+    },
+    {
+      "name": "cn-ai-visibility",
+      "description": "Analyze brand/keyword visibility across 5 Chinese AI search engines (DeepSeek/Kimi/豆包/通义千问/文心一言), get per-engine optimization strategies.",
+      "tags": ["ai-visibility", "chinese-ai", "geo", "brand-monitoring", "deepseek"]
+    },
+    {
+      "name": "cn-data-export",
+      "description": "7-question risk assessment for cross-border data transfer compliance under PIPL/网络安全法/数据安全法. Determines compliance pathway.",
+      "tags": ["data-export", "pipl", "compliance", "privacy", "cross-border"]
+    },
+    {
+      "name": "cn-aigc-detector",
+      "description": "Detect AI-generated Chinese text using 5 statistical signals: sentence variance, vocabulary diversity, AI pattern matching, uniformity, punctuation analysis.",
+      "tags": ["aigc", "ai-detection", "content-authenticity", "chinese", "deepseek"]
+    }
+  ]
+}
