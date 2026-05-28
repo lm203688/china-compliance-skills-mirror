@@ -4,8 +4,8 @@
 
 > Methodology + Detection Workflow + Result Interpretation — not just prompts, complete compliance loops.
 
-[![GitHub stars](https://img.shields.io/github/stars/lm203688/china-compliance-skills?style=social)](https://github.com/lm203688/china-compliance-skills/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/lm203688/china-compliance-skills?style=social)](https://github.com/lm203688/china-compliance-skills/fork)
+[![GitHub stars](https://img.shields.io/github/stars/feichangai-team/china-compliance-skills?style=social)](https://github.com/feichangai-team/china-compliance-skills/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/feichangai-team/china-compliance-skills?style=social)](https://github.com/feichangai-team/china-compliance-skills/fork)
 [![ClawHub](https://img.shields.io/badge/ClawHub-Published-blue)](https://clawhub.com)
 [![Skills](https://img.shields.io/badge/Skills-4-green)](./skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -91,7 +91,7 @@ Add to your agent's skill configuration:
 
 ```bash
 # Clone the repo
-git clone https://github.com/lm203688/china-compliance-skills.git
+git clone https://github.com/feichangai-team/china-compliance-skills.git
 
 # Copy skills to your agent's skills directory
 cp -r china-compliance-skills/skills/* ~/.claude/skills/
