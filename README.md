@@ -72,29 +72,34 @@ Output: AI生成概率 + 5项信号分析 + 可疑片段标注
 
 ## 🚀 Quick Start
 
+### One-Line Install (Recommended)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/feichangai-team/china-compliance-skills/main/scripts/install.sh | sh
+```
+
+Automatically installs to `~/.agents/skills/` (Codex/Gemini/Kiro) and `~/.claude/skills/` (Claude Code).
+
 ### For Claude Code / Cursor / OpenClaw
 
-Add to your agent's skill configuration:
+Add to your `AGENTS.md` or `CLAUDE.md`:
 
-```json
-{
-  "skills": [
-    "cn-compliance-guard",
-    "cn-ai-visibility", 
-    "cn-data-export",
-    "cn-aigc-detector"
-  ]
-}
+```markdown
+## Skills
+- cn-compliance-guard: Scan Chinese text for 200+ banned words (广告法)
+- cn-ai-visibility: Check brand visibility in 5 Chinese AI search engines
+- cn-data-export: Assess cross-border data transfer compliance (PIPL)
+- cn-aigc-detector: Detect AI-generated Chinese text
 ```
 
 ### Manual Installation
 
 ```bash
-# Clone the repo
-git clone https://github.com/feichangai-team/china-compliance-skills.git
+# Clone to universal skills path
+git clone https://github.com/feichangai-team/china-compliance-skills.git ~/.agents/skills/china-compliance-skills
 
-# Copy skills to your agent's skills directory
-cp -r china-compliance-skills/skills/* ~/.claude/skills/
+# Or for Claude Code specifically
+git clone https://github.com/feichangai-team/china-compliance-skills.git ~/.claude/skills/china-compliance-skills
 ```
 
 ---
@@ -161,6 +166,9 @@ MIT License — use freely in your projects. Attribution appreciated.
 
 Inspired by:
 - [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) — "少而精" skill design philosophy
-- [Anthropic-Cybersecurity-Skills](https://github.com/anthropics/anthropic-cybersecurity-skills) — Vertical domain skill library pattern
+- [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) — Vertical domain skill library pattern
+- [Compliance-to-Code](https://github.com/AlexJJJChen/Compliance-to-Code) — Chinese financial regulations → executable code
+- [ok-skills](https://github.com/mxyhi/ok-skills) — Practical SKILL.md examples and AGENTS.md playbooks
+- [MagicSkills](https://github.com/Narwhal-Lab/MagicSkills) — Cross-agent skill infrastructure
 
 Built by [非常AI团队](https://github.com/feichangai-team). If these skills help you, please ⭐ star this repo!
