@@ -4,8 +4,8 @@
 
 > 方法论 + 检测流程 + 结果解读 — 不是简单prompt，是完整合规闭环。
 
-[![GitHub stars](https://img.shields.io/github/stars/feichangai-team/china-compliance-skills?style=social)](https://github.com/feichangai-team/china-compliance-skills/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/feichangai-team/china-compliance-skills?style=social)](https://github.com/feichangai-team/china-compliance-skills/fork)
+[![GitHub stars](https://img.shields.io/github/stars/lm203688/china-compliance-skills-mirror?style=social)](https://github.com/lm203688/china-compliance-skills-mirror/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/lm203688/china-compliance-skills-mirror?style=social)](https://github.com/lm203688/china-compliance-skills-mirror/fork)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 [English](./README.md) | **中文**
@@ -79,7 +79,7 @@
 ### 手动安装
 
 ```bash
-git clone https://github.com/feichangai-team/china-compliance-skills.git
+git clone https://github.com/lm203688/china-compliance-skills-mirror.git
 cp -r china-compliance-skills/skills/* ~/.claude/skills/
 ```
 

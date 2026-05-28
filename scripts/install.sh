@@ -3,14 +3,14 @@
 # Supports: Claude Code, Cursor, Codex CLI, Gemini CLI, OpenClaw, and more
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/feichangai-team/china-compliance-skills/main/scripts/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/lm203688/china-compliance-skills-mirror/main/scripts/install.sh | sh
 #
 # Or clone manually:
-#   git clone https://github.com/feichangai-team/china-compliance-skills.git ~/.agents/skills/china-compliance-skills
+#   git clone https://github.com/lm203688/china-compliance-skills-mirror.git ~/.agents/skills/china-compliance-skills
 
 set -e
 
-REPO="feichangai-team/china-compliance-skills"
+REPO="lm203688/china-compliance-skills-mirror"
 SKILL_NAME="china-compliance-skills"
 
 echo "🛡️ Installing China Compliance Skills..."

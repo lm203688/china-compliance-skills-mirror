@@ -9,7 +9,7 @@
 
 灵感来自ConardLi/garden-skills（6.4K⭐）的"少而精"哲学——每个Skill都是方法论+检测流程+结果解读的完整闭环，不是简单prompt。
 
-GitHub: https://github.com/feichangai-team/china-compliance-skills
+GitHub: https://github.com/lm203688/china-compliance-skills-mirror
 MIT License，免费使用 ✨
 
 #AI合规 #AgentSkills #开源 #中国合规

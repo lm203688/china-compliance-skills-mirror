@@ -47,7 +47,7 @@
 
 ## 开源地址
 
-👉 https://github.com/feichangai-team/china-compliance-skills
+👉 https://github.com/lm203688/china-compliance-skills-mirror
 
 MIT License，免费使用。也提供在线Web版（免费额度可用）。
 

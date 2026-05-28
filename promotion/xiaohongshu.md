@@ -11,7 +11,7 @@
 
 实测：一条抖音脚本，3个人工审核没发现，工具扫出23个违禁词😱
 
-🔗 GitHub免费开源：feichangai-team/china-compliance-skills
+🔗 GitHub免费开源：lm203688/china-compliance-skills-mirror
 🔗 在线版也有免费额度
 
 #违禁词检测 #内容合规 #广告法 #AI工具 #小红书运营 #抖音运营

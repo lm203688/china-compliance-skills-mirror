@@ -4,8 +4,8 @@
 
 > Methodology + Detection Workflow + Result Interpretation — not just prompts, complete compliance loops.
 
-[![GitHub stars](https://img.shields.io/github/stars/feichangai-team/china-compliance-skills?style=social)](https://github.com/feichangai-team/china-compliance-skills/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/feichangai-team/china-compliance-skills?style=social)](https://github.com/feichangai-team/china-compliance-skills/fork)
+[![GitHub stars](https://img.shields.io/github/stars/lm203688/china-compliance-skills-mirror?style=social)](https://github.com/lm203688/china-compliance-skills-mirror/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/lm203688/china-compliance-skills-mirror?style=social)](https://github.com/lm203688/china-compliance-skills-mirror/fork)
 [![ClawHub](https://img.shields.io/badge/ClawHub-Published-blue)](https://clawhub.com)
 [![Skills](https://img.shields.io/badge/Skills-4-green)](./skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -75,7 +75,7 @@ Output: AI生成概率 + 5项信号分析 + 可疑片段标注
 ### One-Line Install (Recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/feichangai-team/china-compliance-skills/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/lm203688/china-compliance-skills-mirror/main/scripts/install.sh | sh
 ```
 
 Automatically installs to `~/.agents/skills/` (Codex/Gemini/Kiro) and `~/.claude/skills/` (Claude Code).
@@ -96,10 +96,10 @@ Add to your `AGENTS.md` or `CLAUDE.md`:
 
 ```bash
 # Clone to universal skills path
-git clone https://github.com/feichangai-team/china-compliance-skills.git ~/.agents/skills/china-compliance-skills
+git clone https://github.com/lm203688/china-compliance-skills-mirror.git ~/.agents/skills/china-compliance-skills
 
 # Or for Claude Code specifically
-git clone https://github.com/feichangai-team/china-compliance-skills.git ~/.claude/skills/china-compliance-skills
+git clone https://github.com/lm203688/china-compliance-skills-mirror.git ~/.claude/skills/china-compliance-skills
 ```
 
 ---
