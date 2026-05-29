@@ -5,10 +5,24 @@
 #   ./check-visibility.sh "你的品牌名" --all-engines
 #   ./check-visibility.sh "你的品牌名" --engine deepseek
 #   ./check-visibility.sh "你的品牌名" --engine kimi --queries 10
+#
+# Environment:
+#   CN_DEBUG=1    Enable debug logging
+#   CN_GEO_API_BASE  API base URL
+#   CN_GEO_API_KEY   API key (optional)
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Source shared utilities (retry, JSON validation, debug logging)
+COMMON_LIB="$SCRIPT_DIR/../../scripts/common.sh"
+if [[ -f "$COMMON_LIB" ]]; then
+  source "$COMMON_LIB"
+else
+  cn_debug() { [[ "${CN_DEBUG:-0}" == "1" ]] && echo "[DEBUG] $*" >&2 || true; }
+  cn_error() { echo "[ERROR] $*" >&2; }
+fi
 ENV_FILE="$SCRIPT_DIR/../.env"
 
 if [[ -f "$ENV_FILE" ]]; then
@@ -21,7 +35,7 @@ if [[ -f "$ENV_FILE" ]]; then
   done < <(grep -E '^(CN_GEO_API_KEY|CN_GEO_API_BASE)=' "$ENV_FILE" 2>/dev/null || true)
 fi
 
-API_BASE="${CN_GEO_API_BASE:-https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com}"
+API_BASE="${CN_GEO_API_BASE:-https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com}"
 API_BASE="${API_BASE%/}"
 ENGINE="all"
 BRAND=""

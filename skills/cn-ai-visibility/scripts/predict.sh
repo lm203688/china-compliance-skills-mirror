@@ -20,7 +20,7 @@ if [[ -f "$ENV_FILE" ]]; then
   done < <(grep -E '^(CN_GEO_API_KEY|CN_GEO_API_BASE)=' "$ENV_FILE" 2>/dev/null || true)
 fi
 
-API_BASE="${CN_GEO_API_BASE:-https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com}"
+API_BASE="${CN_GEO_API_BASE:-https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com}"
 API_BASE="${API_BASE%/}"
 ENGINE="deepseek"
 BRAND=""

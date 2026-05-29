@@ -12,11 +12,11 @@
     "protocol": "https://agents.w3.org/protocol"
   },
   "@type": "Agent",
-  "@id": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/agent.json",
+  "@id": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/agent.json",
   "name": "China Compliance Agent",
   "description": "AI agent providing Chinese advertising law compliance checks, AI search visibility auditing, and cross-border data compliance assessment. Covers 200+ banned words across 5 Chinese platforms, brand visibility in 5 Chinese AI engines (DeepSeek/Kimi/豆包/通义千问/文心一言), and PIPL/GDPR/CCPA data transfer assessment.",
-  "url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com",
-  "logo": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/static/logo.png",
+  "url": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com",
+  "logo": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/static/logo.png",
   "version": "1.0.0",
   "provider": {
     "@type": "Organization",
@@ -76,28 +76,28 @@
     {
       "@type": "APIEndpoint",
       "protocol": "HTTPS",
-      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/check",
+      "endpoint": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/api/check",
       "method": "POST",
       "description": "Check text for compliance violations"
     },
     {
       "@type": "APIEndpoint",
       "protocol": "HTTPS",
-      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/geo/audit",
+      "endpoint": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/api/geo/audit",
       "method": "POST",
       "description": "Audit brand AI search visibility"
     },
     {
       "@type": "APIEndpoint",
       "protocol": "HTTPS",
-      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/data-export/assess",
+      "endpoint": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/api/data-export/assess",
       "method": "POST",
       "description": "Assess cross-border data compliance"
     },
     {
       "@type": "APIEndpoint",
       "protocol": "HTTPS",
-      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/openapi.json",
+      "endpoint": "https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/.well-known/openapi.json",
       "method": "GET",
       "description": "OpenAPI specification"
     }

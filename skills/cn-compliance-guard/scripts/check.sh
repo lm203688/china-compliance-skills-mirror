@@ -1,14 +1,29 @@
 #!/usr/bin/env bash
-# cn-seo-optimizer - Compliance Check Script
+# cn-compliance-guard - Compliance Check Script
 # Scan Chinese content for advertising law violations and SEO compliance
 # Usage:
 #   ./check.sh "要检测的文案" --platform douyin
 #   ./check.sh --file input.txt --platform xiaohongshu
 #   ./check.sh "文案"  (defaults to all platforms)
+#
+# Environment:
+#   CN_DEBUG=1    Enable debug logging
+#   CN_COMPLIANCE_API_BASE  API base URL
+#   CN_COMPLIANCE_API_KEY   API key (optional)
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Source shared utilities (retry, JSON validation, debug logging)
+COMMON_LIB="$SCRIPT_DIR/../../scripts/common.sh"
+if [[ -f "$COMMON_LIB" ]]; then
+  source "$COMMON_LIB"
+else
+  # Fallback: minimal inline functions
+  cn_debug() { [[ "${CN_DEBUG:-0}" == "1" ]] && echo "[DEBUG] $*" >&2 || true; }
+  cn_error() { echo "[ERROR] $*" >&2; }
+fi
 ENV_FILE="$SCRIPT_DIR/../.env"
 
 # Load env if exists
@@ -23,7 +38,7 @@ if [[ -f "$ENV_FILE" ]]; then
 fi
 
 # Defaults
-API_BASE="${CN_COMPLIANCE_API_BASE:-https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com}"
+API_BASE="${CN_COMPLIANCE_API_BASE:-https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com}"
 API_BASE="${API_BASE%/}"
 PLATFORM="all"
 TEXT=""
@@ -89,21 +104,28 @@ print(json.dumps({
 }))
 " "$TEXT" "$PLATFORM")
 
-# Call API
-HTTP_RESPONSE=$(curl -s -w "\n%{http_code}" \
-  -X POST \
-  -H "Content-Type: application/json" \
-  -d "$PAYLOAD" \
-  --connect-timeout 10 \
-  --max-time 30 \
-  "$API_BASE/check" 2>&1) || {
-  echo "错误: 网络连接失败，请检查网络"
-  exit 1
-}
+# Call API with retry and error handling
+cn_debug "Calling API: $API_BASE/check"
+cn_debug "Payload size: ${#PAYLOAD} chars"
 
-# Extract status code and body
-HTTP_CODE=$(echo "$HTTP_RESPONSE" | tail -1)
-BODY=$(echo "$HTTP_RESPONSE" | sed '$d')
+if type cn_api_call &>/dev/null; then
+  # Use shared library with retry
+  cn_api_call BODY HTTP_CODE POST "$API_BASE/check" "$PAYLOAD"
+else
+  # Fallback: basic curl without retry
+  HTTP_RESPONSE=$(curl -s -w "\n%{http_code}" \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d "$PAYLOAD" \
+    --connect-timeout 10 \
+    --max-time 30 \
+    "$API_BASE/check" 2>&1) || {
+    echo "错误: 网络连接失败，请检查网络"
+    exit 1
+  }
+  HTTP_CODE=$(echo "$HTTP_RESPONSE" | tail -1)
+  BODY=$(echo "$HTTP_RESPONSE" | sed '$d')
+fi
 
 # Handle HTTP errors
 case "$HTTP_CODE" in

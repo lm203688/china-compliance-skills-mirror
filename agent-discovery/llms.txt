@@ -30,17 +30,17 @@ China Compliance Tools is a set of APIs that help AI agents and developers ensur
 
 ```bash
 # Check advertising law compliance
-curl -X POST https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/check \
+curl -X POST https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/api/check \
   -H "Content-Type: application/json" \
   -d '{"text": "我们的产品是全国最好的，效果第一", "platform": "douyin"}'
 
 # Audit brand AI search visibility
-curl -X POST https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/geo/audit \
+curl -X POST https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/api/geo/audit \
   -H "Content-Type: application/json" \
   -d '{"brand": "华为", "keywords": ["手机", "5G"]}'
 
 # Assess data export compliance
-curl -X POST https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/data-export/assess \
+curl -X POST https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/api/data-export/assess \
   -H "Content-Type: application/json" \
   -d '{"description": "电商应用，收集用户姓名地址支付信息，数据存储在AWS新加坡"}'
 ```
@@ -69,11 +69,11 @@ This service supports multiple agent discovery protocols:
 
 | Protocol | URL |
 |----------|-----|
-| agent.json | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/agent.json` |
-| OpenAPI 3.1 | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/openapi.json` |
-| AI Plugin | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/ai-plugin.json` |
+| agent.json | `https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/agent.json` |
+| OpenAPI 3.1 | `https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/.well-known/openapi.json` |
+| AI Plugin | `https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/.well-known/ai-plugin.json` |
 | MCP SSE | `http://150.158.119.19/mcp/china-compliance/sse` |
-| llms.txt | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/llms.txt` |
+| llms.txt | `https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/llms.txt` |
 | JSON-LD | Embedded in HTML pages via `<script type="application/ld+json">` |
 
 ## Pricing
