@@ -1,0 +1,311 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "China Compliance API",
+    "description": "Chinese advertising law compliance, AI search visibility, and cross-border data compliance tools. Covers 200+ banned words across 5 Chinese platforms, brand visibility in 5 Chinese AI engines, and PIPL/GDPR/CCPA assessment.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "China Compliance Tools",
+      "email": "463102527@qq.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com",
+      "description": "Production API (Tencent Cloud SCF)"
+    }
+  ],
+  "paths": {
+    "/api/check": {
+      "post": {
+        "operationId": "checkCompliance",
+        "summary": "Check text for Chinese advertising law violations",
+        "description": "Scans text for Chinese advertising law violations, platform-specific banned words, and extreme words. Returns risk-level classification (high/medium/low) with safe replacement suggestions. Supports 5 platforms: baidu, douyin, xiaohongshu, taobao, wechat.",
+        "tags": ["Compliance"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["text"],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The text content to check for violations",
+                    "examples": ["我们的产品是全国最好的，效果第一，国家级认证"]
+                  },
+                  "platform": {
+                    "type": "string",
+                    "enum": ["baidu", "douyin", "xiaohongshu", "taobao", "wechat", "all"],
+                    "default": "all",
+                    "description": "Target platform for platform-specific rules"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Compliance check result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "violations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "word": { "type": "string", "description": "The violating word/phrase" },
+                          "severity": { "type": "string", "enum": ["high", "medium", "low"] },
+                          "category": { "type": "string", "description": "Violation category" },
+                          "replacement": { "type": "string", "description": "Safe replacement suggestion" },
+                          "law_reference": { "type": "string", "description": "Relevant law article reference" }
+                        }
+                      }
+                    },
+                    "score": { "type": "integer", "description": "Compliance score (0-100)" },
+                    "platform": { "type": "string" },
+                    "summary": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/suggestions": {
+      "get": {
+        "operationId": "getSuggestions",
+        "summary": "Get platform-specific compliance suggestions",
+        "description": "Returns banned words list and compliance rules for a specific Chinese platform. Useful for pre-checking content before publishing.",
+        "tags": ["Compliance"],
+        "parameters": [
+          {
+            "name": "platform",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["baidu", "douyin", "xiaohongshu", "taobao", "wechat"]
+            },
+            "description": "Platform to get suggestions for"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Platform compliance suggestions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "platform": { "type": "string" },
+                    "banned_words": { "type": "array", "items": { "type": "string" } },
+                    "rules": { "type": "array", "items": { "type": "string" } },
+                    "tips": { "type": "array", "items": { "type": "string" } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/geo/audit": {
+      "post": {
+        "operationId": "auditGeoVisibility",
+        "summary": "Audit brand visibility in Chinese AI search engines",
+        "description": "Checks how a brand appears in Chinese AI search engines (DeepSeek, Kimi, 豆包, 通义千问, 文心一言). Returns citation rates, sentiment analysis, and optimization suggestions. This is GEO (Generative Engine Optimization) for the Chinese market.",
+        "tags": ["GEO"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["brand"],
+                "properties": {
+                  "brand": {
+                    "type": "string",
+                    "description": "Brand or product name to audit",
+                    "examples": ["华为"]
+                  },
+                  "engines": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": ["deepseek", "kimi", "doubao", "tongyi", "ernie"]
+                    },
+                    "description": "AI engines to check (default: all)"
+                  },
+                  "keywords": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Industry keywords to check visibility for"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "GEO audit result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "brand": { "type": "string" },
+                    "engines": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "engine": { "type": "string" },
+                          "cited": { "type": "boolean" },
+                          "citation_rate": { "type": "number" },
+                          "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"] },
+                          "competitors_mentioned": { "type": "array", "items": { "type": "string" } },
+                          "suggestion": { "type": "string" }
+                        }
+                      }
+                    },
+                    "overall_score": { "type": "integer", "description": "Overall GEO score (0-100)" },
+                    "dimensions": {
+                      "type": "object",
+                      "properties": {
+                        "compliance_risk": { "type": "integer" },
+                        "engagement_potential": { "type": "integer" },
+                        "brand_safety": { "type": "integer" },
+                        "seo_visibility": { "type": "integer" },
+                        "ai_citation_probability": { "type": "integer" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-export/assess": {
+      "post": {
+        "operationId": "assessDataExport",
+        "summary": "Assess cross-border data transfer compliance",
+        "description": "Evaluates cross-border data transfer compliance against PIPL (China), GDPR (EU), and CCPA (US/California). Returns risk assessment, required actions, and compliance recommendations.",
+        "tags": ["Data Compliance"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["description"],
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "description": "Description of the application and its data flows",
+                    "examples": ["电商应用，收集用户姓名地址支付信息，数据存储在AWS新加坡"]
+                  },
+                  "regulations": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": ["pipl", "gdpr", "ccpa"]
+                    },
+                    "description": "Regulations to assess against (default: all)"
+                  },
+                  "user_count": {
+                    "type": "integer",
+                    "description": "Approximate number of users (affects PIPL requirements)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Data compliance assessment result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "regulations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "regulation": { "type": "string" },
+                          "status": { "type": "string", "enum": ["compliant", "warning", "violation"] },
+                          "risk_level": { "type": "string", "enum": ["low", "medium", "high"] },
+                          "findings": { "type": "array", "items": { "type": "string" } },
+                          "required_actions": { "type": "array", "items": { "type": "string" } }
+                        }
+                      }
+                    },
+                    "overall_risk": { "type": "string", "enum": ["low", "medium", "high"] },
+                    "summary": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "healthCheck",
+        "summary": "API health check",
+        "description": "Returns the health status of the API and its backend services.",
+        "tags": ["System"],
+        "responses": {
+          "200": {
+            "description": "Health status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "enum": ["healthy", "degraded", "down"] },
+                    "version": { "type": "string" },
+                    "uptime": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    { "name": "Compliance", "description": "Chinese advertising law and platform compliance" },
+    { "name": "GEO", "description": "Generative Engine Optimization for Chinese AI search" },
+    { "name": "Data Compliance", "description": "Cross-border data transfer compliance assessment" },
+    { "name": "System", "description": "System health and status" }
+  ],
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "API key for extended usage (free tier available without key)"
+      }
+    }
+  }
+}

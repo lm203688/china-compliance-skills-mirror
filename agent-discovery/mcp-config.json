@@ -1,0 +1,84 @@
+{
+  "mcpServers": {
+    "china-compliance": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-client", "connect", "http://150.158.119.19/mcp/china-compliance/sse"],
+      "description": "Chinese advertising law compliance, AI search visibility, and cross-border data compliance tools",
+      "tools": [
+        {
+          "name": "check_compliance",
+          "description": "Check text for Chinese advertising law violations and platform-specific banned words. Returns risk-level classification with safe replacement suggestions.",
+          "inputSchema": {
+            "type": "object",
+            "required": ["text"],
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Text content to check for violations"
+              },
+              "platform": {
+                "type": "string",
+                "enum": ["baidu", "douyin", "xiaohongshu", "taobao", "wechat", "all"],
+                "default": "all",
+                "description": "Target platform for platform-specific rules"
+              }
+            }
+          }
+        },
+        {
+          "name": "audit_geo_visibility",
+          "description": "Audit brand visibility in Chinese AI search engines (DeepSeek, Kimi, 豆包, 通义千问, 文心一言). Returns citation rates, sentiment, and optimization suggestions.",
+          "inputSchema": {
+            "type": "object",
+            "required": ["brand"],
+            "properties": {
+              "brand": {
+                "type": "string",
+                "description": "Brand or product name to audit"
+              },
+              "engines": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["deepseek", "kimi", "doubao", "tongyi", "ernie"]
+                },
+                "description": "AI engines to check (default: all)"
+              },
+              "keywords": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Industry keywords to check visibility for"
+              }
+            }
+          }
+        },
+        {
+          "name": "assess_data_export",
+          "description": "Assess cross-border data transfer compliance against PIPL (China), GDPR (EU), and CCPA (US). Returns risk assessment and required actions.",
+          "inputSchema": {
+            "type": "object",
+            "required": ["description"],
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "Description of the application and its data flows"
+              },
+              "regulations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["pipl", "gdpr", "ccpa"]
+                },
+                "description": "Regulations to assess against (default: all)"
+              },
+              "user_count": {
+                "type": "integer",
+                "description": "Approximate number of users"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

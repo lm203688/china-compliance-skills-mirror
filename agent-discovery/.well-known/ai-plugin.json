@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "name_for_human": "China Compliance Tools",
+  "name_for_model": "china_compliance",
+  "description_for_human": "Chinese advertising law compliance checker, AI search visibility auditor, and cross-border data compliance assessor. Covers 200+ banned words, 5 Chinese AI engines, and PIPL/GDPR/CCPA assessment.",
+  "description_for_model": "Provides three tools for Chinese market compliance: (1) check text for Chinese advertising law violations and platform-specific banned words across Baidu/Douyin/Xiaohongshu/Taobao/WeChat with safe replacement suggestions, (2) audit brand visibility in Chinese AI search engines (DeepSeek/Kimi/豆包/通义千问/文心一言) with citation scoring, (3) assess cross-border data transfer compliance (PIPL/GDPR/CCPA) for applications handling Chinese user data. All tools return structured JSON with risk-level classification.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/openapi.json"
+  },
+  "logo_url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/static/logo.png",
+  "contact_email": "463102527@qq.com",
+  "legal_info_url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/legal"
+}

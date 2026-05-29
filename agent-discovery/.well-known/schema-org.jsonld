@@ -1,0 +1,96 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "China Compliance Tools",
+  "description": "Chinese advertising law compliance checker, AI search visibility auditor, and cross-border data compliance assessor. Covers 200+ banned words across 5 Chinese platforms, brand visibility in 5 Chinese AI engines, and PIPL/GDPR/CCPA assessment.",
+  "url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free Tier",
+      "price": "0",
+      "priceCurrency": "CNY",
+      "description": "5 compliance checks, 3 GEO audits, 2 data assessments per month"
+    },
+    {
+      "@type": "Offer",
+      "name": "Compliance Pro",
+      "price": "49",
+      "priceCurrency": "CNY",
+      "billingIncrement": "P1M",
+      "description": "Unlimited compliance checks with platform-specific rules"
+    },
+    {
+      "@type": "Offer",
+      "name": "GEO Pro",
+      "price": "149",
+      "priceCurrency": "CNY",
+      "billingIncrement": "P1M",
+      "description": "Unlimited AI search visibility audits across 5 Chinese AI engines"
+    },
+    {
+      "@type": "Offer",
+      "name": "Data Compliance Pro",
+      "price": "199",
+      "priceCurrency": "CNY",
+      "billingIncrement": "P1M",
+      "description": "Unlimited cross-border data compliance assessments"
+    }
+  ],
+  "featureList": [
+    "200+ Chinese advertising law banned words detection",
+    "5 platform-specific compliance rules (Baidu, Douyin, Xiaohongshu, Taobao, WeChat)",
+    "AI search visibility audit for DeepSeek, Kimi, 豆包, 通义千问, 文心一言",
+    "Cross-border data transfer compliance (PIPL, GDPR, CCPA)",
+    "Risk-level classification with safe replacement suggestions",
+    "REST API with OpenAPI 3.1 specification",
+    "MCP (Model Context Protocol) SSE endpoint",
+    "Spec Kit extension for Spec-Driven Development"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "China Compliance Tools",
+    "email": "463102527@qq.com"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "China Compliance Tools"
+  },
+  "potentialAction": [
+    {
+      "@type": "CheckAction",
+      "name": "Check Advertising Law Compliance",
+      "description": "Check text for Chinese advertising law violations and platform-specific banned words",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/check",
+        "httpMethod": "POST",
+        "contentType": "application/json"
+      }
+    },
+    {
+      "@type": "DiscoverAction",
+      "name": "Audit AI Search Visibility",
+      "description": "Audit brand visibility in Chinese AI search engines",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/geo/audit",
+        "httpMethod": "POST",
+        "contentType": "application/json"
+      }
+    },
+    {
+      "@type": "AssessAction",
+      "name": "Assess Data Export Compliance",
+      "description": "Assess cross-border data transfer compliance",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/data-export/assess",
+        "httpMethod": "POST",
+        "contentType": "application/json"
+      }
+    }
+  ]
+}

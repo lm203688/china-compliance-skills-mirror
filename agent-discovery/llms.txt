@@ -1,0 +1,103 @@
+# China Compliance Tools
+
+> AI agent providing Chinese advertising law compliance, AI search visibility auditing, and cross-border data compliance assessment.
+
+## What is this?
+
+China Compliance Tools is a set of APIs that help AI agents and developers ensure their content and applications comply with Chinese regulations. It covers three critical areas where most international tools fall short:
+
+### 1. Advertising Law Compliance (`/api/check`)
+- **200+ banned words** across 5 Chinese platforms (Baidu, Douyin, Xiaohongshu, Taobao, WeChat)
+- Risk-level classification: 🔴 High (封号/罚款), 🟡 Medium (限流/降权), 🟢 Low (建议修改)
+- Safe replacement suggestions for every violation
+- Chinese advertising law (广告法) violations can result in fines up to ¥200,000
+
+### 2. AI Search Visibility / GEO (`/api/geo/audit`)
+- Audit brand visibility in **5 Chinese AI search engines**: DeepSeek, Kimi, 豆包, 通义千问, 文心一言
+- 5-dimension scoring: compliance risk, engagement potential, brand safety, SEO visibility, AI citation probability
+- Competitor analysis: see which competitors AI engines recommend instead of you
+- 32% of brands are invisible in DeepSeek; 41% have AI recommending competitors
+
+### 3. Cross-Border Data Compliance (`/api/data-export/assess`)
+- Assess compliance with **PIPL** (China), **GDPR** (EU), **CCPA** (US/California)
+- Risk assessment with required actions before launch
+- Apps with >1M users must submit cross-border data transfer assessments
+- GDPR fines can reach €20M or 4% of global revenue
+
+## Quick Start
+
+### REST API (No auth required for free tier)
+
+```bash
+# Check advertising law compliance
+curl -X POST https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/check \
+  -H "Content-Type: application/json" \
+  -d '{"text": "我们的产品是全国最好的，效果第一", "platform": "douyin"}'
+
+# Audit brand AI search visibility
+curl -X POST https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/geo/audit \
+  -H "Content-Type: application/json" \
+  -d '{"brand": "华为", "keywords": ["手机", "5G"]}'
+
+# Assess data export compliance
+curl -X POST https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/data-export/assess \
+  -H "Content-Type: application/json" \
+  -d '{"description": "电商应用，收集用户姓名地址支付信息，数据存储在AWS新加坡"}'
+```
+
+### MCP (Model Context Protocol)
+
+Connect via SSE:
+```
+http://150.158.119.19/mcp/china-compliance/sse
+```
+
+Available tools:
+- `check_compliance` — Check text for Chinese advertising law violations
+- `audit_geo_visibility` — Audit brand visibility in Chinese AI search engines
+- `assess_data_export` — Assess cross-border data transfer compliance
+
+### Spec Kit Extension
+
+```bash
+specify extension add china-compliance --from https://github.com/lm203688/spec-kit-china-compliance/archive/refs/tags/v1.0.0.zip
+```
+
+## Agent Discovery
+
+This service supports multiple agent discovery protocols:
+
+| Protocol | URL |
+|----------|-----|
+| agent.json | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/agent.json` |
+| OpenAPI 3.1 | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/openapi.json` |
+| AI Plugin | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/ai-plugin.json` |
+| MCP SSE | `http://150.158.119.19/mcp/china-compliance/sse` |
+| llms.txt | `https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/llms.txt` |
+| JSON-LD | Embedded in HTML pages via `<script type="application/ld+json">` |
+
+## Pricing
+
+| Tool | Free Tier | Pro |
+|------|-----------|-----|
+| Compliance Check | 5 checks/month | ¥49/month |
+| GEO Audit | 3 audits/month | ¥149/month |
+| Data Export Assessment | 2 assessments/month | ¥199/month |
+
+## Web Apps
+
+- [合规通](https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/) — Advertising law compliance checker
+- [AI搜索可见度](https://1341839497-2d5g5k6b1k.ap-shanghai.tencentscf.com/) — Brand AI visibility auditor
+- [AIGC检测](https://1341839497-7v3p9w5k2m.ap-shanghai.tencentscf.com/) — AI-generated content detector
+- [数据出境自评](https://1341839497-xq8m5j4e2n.ap-shanghai.tencentscf.com/) — Cross-border data compliance
+
+## Related Projects
+
+- [ClawHub Skills](https://clawhub.com/skills?q=china-compliance) — AI agent skills for Chinese compliance
+- [spec-kit Extension](https://github.com/lm203688/spec-kit-china-compliance) — Spec-Driven Development integration
+- [GitHub Mirror](https://github.com/lm203688/china-compliance-skills-mirror) — Open source mirror
+
+## Contact
+
+- Email: 463102527@qq.com
+- GitHub: [@lm203688](https://github.com/lm203688)

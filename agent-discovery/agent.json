@@ -1,0 +1,126 @@
+{
+  "@context": {
+    "@vocab": "https://agents.w3.org/",
+    "name": "https://schema.org/name",
+    "description": "https://schema.org/description",
+    "url": "https://schema.org/url",
+    "logo": "https://schema.org/logo",
+    "capabilities": "https://agents.w3.org/capabilities",
+    "authentication": "https://agents.w3.org/authentication",
+    "api": "https://agents.w3.org/api",
+    "endpoint": "https://agents.w3.org/endpoint",
+    "protocol": "https://agents.w3.org/protocol"
+  },
+  "@type": "Agent",
+  "@id": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/agent.json",
+  "name": "China Compliance Agent",
+  "description": "AI agent providing Chinese advertising law compliance checks, AI search visibility auditing, and cross-border data compliance assessment. Covers 200+ banned words across 5 Chinese platforms, brand visibility in 5 Chinese AI engines (DeepSeek/Kimi/豆包/通义千问/文心一言), and PIPL/GDPR/CCPA data transfer assessment.",
+  "url": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com",
+  "logo": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/static/logo.png",
+  "version": "1.0.0",
+  "provider": {
+    "@type": "Organization",
+    "name": "China Compliance Tools",
+    "email": "463102527@qq.com"
+  },
+  "capabilities": [
+    {
+      "@type": "Capability",
+      "name": "compliance-check",
+      "description": "Check text for Chinese advertising law violations and platform-specific banned words",
+      "input": {
+        "text": { "type": "string", "required": true, "description": "Text content to check" },
+        "platform": { "type": "string", "enum": ["baidu", "douyin", "xiaohongshu", "taobao", "wechat", "all"], "default": "all" }
+      },
+      "output": {
+        "violations": { "type": "array", "description": "List of violations with severity and replacements" },
+        "score": { "type": "integer", "description": "Compliance score 0-100" }
+      }
+    },
+    {
+      "@type": "Capability",
+      "name": "geo-audit",
+      "description": "Audit brand visibility in Chinese AI search engines (DeepSeek, Kimi, 豆包, 通义千问, 文心一言)",
+      "input": {
+        "brand": { "type": "string", "required": true, "description": "Brand or product name" },
+        "engines": { "type": "array", "description": "AI engines to check" },
+        "keywords": { "type": "array", "description": "Industry keywords" }
+      },
+      "output": {
+        "engines": { "type": "array", "description": "Per-engine visibility results" },
+        "overall_score": { "type": "integer", "description": "GEO score 0-100" },
+        "dimensions": { "type": "object", "description": "5-dimension scoring" }
+      }
+    },
+    {
+      "@type": "Capability",
+      "name": "data-export-assess",
+      "description": "Assess cross-border data transfer compliance (PIPL/GDPR/CCPA)",
+      "input": {
+        "description": { "type": "string", "required": true, "description": "Application and data flow description" },
+        "regulations": { "type": "array", "description": "Regulations to assess" },
+        "user_count": { "type": "integer", "description": "Number of users" }
+      },
+      "output": {
+        "regulations": { "type": "array", "description": "Per-regulation compliance status" },
+        "overall_risk": { "type": "string", "description": "Overall risk level" }
+      }
+    }
+  ],
+  "authentication": {
+    "@type": "AuthenticationScheme",
+    "scheme": "none",
+    "description": "Free tier requires no authentication. Extended usage requires X-API-Key header."
+  },
+  "api": [
+    {
+      "@type": "APIEndpoint",
+      "protocol": "HTTPS",
+      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/check",
+      "method": "POST",
+      "description": "Check text for compliance violations"
+    },
+    {
+      "@type": "APIEndpoint",
+      "protocol": "HTTPS",
+      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/geo/audit",
+      "method": "POST",
+      "description": "Audit brand AI search visibility"
+    },
+    {
+      "@type": "APIEndpoint",
+      "protocol": "HTTPS",
+      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/api/data-export/assess",
+      "method": "POST",
+      "description": "Assess cross-border data compliance"
+    },
+    {
+      "@type": "APIEndpoint",
+      "protocol": "HTTPS",
+      "endpoint": "https://1341839497-2yuxt6z58d.ap-guangzhou.tencentscf.com/.well-known/openapi.json",
+      "method": "GET",
+      "description": "OpenAPI specification"
+    }
+  ],
+  "mcp": {
+    "@type": "MCPConfig",
+    "protocol": "mcp",
+    "version": "2024-11-05",
+    "transport": "sse",
+    "endpoint": "http://150.158.119.19/mcp/china-compliance/sse",
+    "tools": [
+      {
+        "name": "check_compliance",
+        "description": "Check text for Chinese advertising law violations"
+      },
+      {
+        "name": "audit_geo_visibility",
+        "description": "Audit brand visibility in Chinese AI search engines"
+      },
+      {
+        "name": "assess_data_export",
+        "description": "Assess cross-border data transfer compliance"
+      }
+    ]
+  }
+}
