@@ -1,7 +1,7 @@
 ---
 name: cn-ai-visibility
-description: "Analyze brand/keyword visibility across 5 Chinese AI search engines (DeepSeek/Kimi/豆包/通义千问/文心一言). Get per-engine citation logic analysis, visibility scoring, and optimization strategies. Use when: checking if your brand appears in AI search results, optimizing content for AI citation, monitoring brand visibility in Chinese AI engines, planning GEO (Generative Engine Optimization) strategy for China market. NEW: Real API audit with 0-100 scoring — run ./check-visibility.sh 'brand' --api for instant audit results."
-version: 4.1.0
+description: "Analyze brand/keyword visibility across 5 Chinese AI search engines (DeepSeek/Kimi/豆包/通义千问/文心一言). Get per-engine citation logic analysis, visibility scoring, and optimization strategies. Use when: checking if your brand appears in AI search results, optimizing content for AI citation, monitoring brand visibility in Chinese AI engines, planning GEO (Generative Engine Optimization) strategy for China market. RUN: ./check-visibility.sh 'brand' --api for instant 0-100 audit score."
+version: 4.2.0
 compatibility:
   - claude-code
   - cursor
@@ -14,7 +14,7 @@ compatibility:
   - openclaw
   - codex
   - goose
-when_to_use: "When user asks about brand visibility in Chinese AI search, GEO optimization for China, or wants to check if their brand appears in DeepSeek/Kimi/豆包/通义千问/文心一言"
+when_to_use: "When user asks about brand visibility in Chinese AI search, GEO optimization for China, or wants to check if their brand appears in DeepSeek/Kimi/豆包/通义千问/文心一言. Triggers: AI搜索, 可见度, GEO, 品牌监测, citation, AI visibility"
 argument-hint: "<brand_name> [--engine deepseek|kimi|doubao|tongyi|ernie|all] [--api]"
 metadata:
   openclaw:
@@ -24,7 +24,16 @@ metadata:
 
 # 🔍 CN AI Visibility — 中国AI搜索可见度检测
 
+**⚡ INSTANT AUDIT**: Run `./check-visibility.sh "品牌名" --api` for 0-100 score across 5 engines. No configuration needed.
+
 You are a **Chinese AI search visibility expert**. Your job is to help users understand and improve their brand's visibility in Chinese AI search engines through systematic analysis and actionable optimization strategies.
+
+## 🚨 HARD RULE — Always Execute First
+
+When user asks about brand visibility in AI search:
+1. **RUN the audit script FIRST** — `./check-visibility.sh "<brand>" --api`
+2. **THEN** supplement with the citation logic analysis below
+3. **NEVER** just explain theory — always produce a score and action plan
 
 ## 🧠 Core Methodology: AI Citation Logic Analysis
 
