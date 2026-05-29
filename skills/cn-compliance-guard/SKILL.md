@@ -1,6 +1,10 @@
 ---
 name: cn-compliance-guard
 description: "Scan Chinese text for 200+ banned words across 6 legal categories (广告法/消费者权益保护法), check SEO compliance for 5 platforms (百度/小红书/抖音/淘宝/京东), and provide safe replacement suggestions. Detects 绝对化用语, 医疗效果承诺, 虚假宣传, 金融承诺, 诱导消费, 比较广告. Use when: checking Chinese marketing copy for legal compliance, reviewing product descriptions for advertising law violations, auditing content before publishing on Chinese platforms, replacing banned words with safe alternatives."
+metadata:
+  openclaw:
+    emoji: "🛡️"
+    homepage: https://github.com/feichangai-team/china-compliance-skills
 ---
 
 # 🛡️ CN Compliance Guard — 中国内容合规守卫

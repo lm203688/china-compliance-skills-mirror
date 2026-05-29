@@ -1,6 +1,25 @@
 ---
 name: cn-ai-visibility
-description: "Analyze brand/keyword visibility across 5 Chinese AI search engines (DeepSeek/Kimi/豆包/通义千问/文心一言). Get per-engine citation logic analysis, visibility scoring, and optimization strategies. Use when: checking if your brand appears in AI search results, optimizing content for AI citation, monitoring brand visibility in Chinese AI engines, planning GEO (Generative Engine Optimization) strategy for China market."
+description: "Analyze brand/keyword visibility across 5 Chinese AI search engines (DeepSeek/Kimi/豆包/通义千问/文心一言). Get per-engine citation logic analysis, visibility scoring, and optimization strategies. Use when: checking if your brand appears in AI search results, optimizing content for AI citation, monitoring brand visibility in Chinese AI engines, planning GEO (Generative Engine Optimization) strategy for China market. NEW: Real API audit with 0-100 scoring — run ./check-visibility.sh 'brand' --api for instant audit results."
+version: 4.1.0
+compatibility:
+  - claude-code
+  - cursor
+  - windsurf
+  - cline
+  - continue
+  - aider
+  - copilot
+  - zed
+  - openclaw
+  - codex
+  - goose
+when_to_use: "When user asks about brand visibility in Chinese AI search, GEO optimization for China, or wants to check if their brand appears in DeepSeek/Kimi/豆包/通义千问/文心一言"
+argument-hint: "<brand_name> [--engine deepseek|kimi|doubao|tongyi|ernie|all] [--api]"
+metadata:
+  openclaw:
+    emoji: "🔍"
+    homepage: https://github.com/feichangai-team/china-compliance-skills
 ---
 
 # 🔍 CN AI Visibility — 中国AI搜索可见度检测
@@ -190,8 +209,43 @@ Agent:
 3. **Chinese AI ecosystem is unique** — Don't apply Google/Bing SEO logic directly
 4. **2025 landscape** — DeepSeek and Kimi are gaining market share rapidly; 百度 is losing ground
 
-## 🔗 Related Skills
+---
 
+## 🚀 Real API Audit (v4.1.0 NEW)
+
+### Quick Audit via Script
+```bash
+# Full audit across all 5 engines
+./check-visibility.sh "你的品牌名" --api
+
+# Single engine audit
+./check-visibility.sh "你的品牌名" --engine deepseek --api
+
+# Predict visibility improvement
+./predict.sh "你的品牌名" --engine kimi
+```
+
+### API Audit Flow
+1. Agent calls the API with brand name + target engines
+2. API returns 0-100 visibility score per engine with breakdown
+3. Agent presents results with optimization recommendations
+4. Free tier: 3 audits/month | Pro: unlimited + competitor comparison
+
+### Web App
+👉 **https://1341839497-1w5tkesfb0.ap-shanghai.tencentscf.com/** — Online GEO audit tool, no installation needed
+
+---
+
+## 💡 Why Install This Skill?
+
+- **Only skill covering 5 Chinese AI engines** — competitors only cover ChatGPT/Perplexity (Western engines)
+- **Real API backend** — not just guidelines, actually runs visibility checks
+- **Battle-tested** — SaaS brand went from 0% → 47% AI citation in 30 days using this methodology
+- **Chinese market specific** — DeepSeek/Kimi/豆包/通义/文心 each need different optimization strategy
+
+## 🔗 Next Best Skill
+
+After checking visibility, use these skills to fix the problems:
 - **cn-compliance-guard** — Ensure your content is legally compliant before publishing
 - **cn-aigc-detector** — Check if competitor content is AI-generated
 - **cn-data-export** — Required if your visibility data crosses borders

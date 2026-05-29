@@ -1,6 +1,10 @@
 ---
 name: cn-data-export
 description: "Assess cross-border data transfer compliance under PIPL/网络安全法/数据安全法. 7-question risk assessment determines compliance pathway (安全评估/标准合同/认证). Covers personal information thresholds, important data identification, CIIO obligations. Use when: transferring data from China overseas, assessing if data export needs CAC security assessment, determining which compliance pathway applies, checking PIPL compliance for international business, evaluating data localization requirements."
+metadata:
+  openclaw:
+    emoji: "🛡️"
+    homepage: https://github.com/feichangai-team/china-compliance-skills
 ---
 
 # 🛡️ CN Data Export — 中国数据出境合规评估

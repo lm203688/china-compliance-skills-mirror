@@ -1,6 +1,10 @@
 ---
 name: cn-aigc-detector
 description: "Detect AI-generated Chinese text using 5 statistical signals: sentence length variance (perplexity), vocabulary TTR (burstiness), structural pattern matching (首先...其次...最后), sentence starter uniformity, and punctuation density analysis. Highlights suspicious sections. Use when: verifying if Chinese text is AI-generated, checking content authenticity before publishing, auditing user-generated content for AI usage, detecting AI-written reviews/comments/articles, ensuring content originality compliance."
+metadata:
+  openclaw:
+    emoji: "🤖"
+    homepage: https://github.com/feichangai-team/china-compliance-skills
 ---
 
 # 🤖 CN AIGC Detector — AI生成内容检测
