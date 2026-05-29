@@ -90,9 +90,9 @@ cp -r china-compliance-skills/skills/* ~/.claude/skills/
 | Skill | Web应用 | 定价 |
 |-------|---------|------|
 | cn-compliance-guard | [合规通](https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/) | 免费5次/月, Pro ¥49/月 |
-| cn-ai-visibility | [AI搜索可见度](https://1341839497-2d5g5k6b1k.ap-shanghai.tencentscf.com/) | 免费3次/月, Pro ¥149/月 |
-| cn-data-export | [数据出境自评](https://1341839497-xq8m5j4e2n.ap-shanghai.tencentscf.com/) | 免费, Pro ¥199/月 |
-| cn-aigc-detector | [AI内容检测](https://1341839497-7v3p9w5k2m.ap-shanghai.tencentscf.com/) | 免费5次/月, Pro ¥99/月 |
+| cn-ai-visibility | [AI搜索可见度](https://1341839497-1w5tkesfb0.ap-shanghai.tencentscf.com/) | 免费3次/月, Pro ¥149/月 |
+| cn-data-export | [数据出境自评](https://1341839497-72h2iknf4m.ap-shanghai.tencentscf.com/) | 免费, Pro ¥199/月 |
+| cn-aigc-detector | [AI内容检测](https://1341839497-gi14eledh6.ap-shanghai.tencentscf.com/) | 免费5次/月, Pro ¥99/月 |
 
 ---
 

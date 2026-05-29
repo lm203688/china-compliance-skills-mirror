@@ -134,9 +134,9 @@ Each skill powers a live web application:
 | Skill | Web App | Pricing |
 |-------|---------|---------|
 | cn-compliance-guard | [合规通](https://1341839497-jv04655vcs.ap-shanghai.tencentscf.com/) | Free 5次/月, Pro ¥49/月 |
-| cn-ai-visibility | [AI搜索可见度](https://1341839497-2d5g5k6b1k.ap-shanghai.tencentscf.com/) | Free 3次/月, Pro ¥149/月 |
-| cn-data-export | [数据出境自评](https://1341839497-xq8m5j4e2n.ap-shanghai.tencentscf.com/) | Free, Pro ¥199/月 |
-| cn-aigc-detector | [AI内容检测](https://1341839497-7v3p9w5k2m.ap-shanghai.tencentscf.com/) | Free 5次/月, Pro ¥99/月 |
+| cn-ai-visibility | [AI搜索可见度](https://1341839497-1w5tkesfb0.ap-shanghai.tencentscf.com/) | Free 3次/月, Pro ¥149/月 |
+| cn-data-export | [数据出境自评](https://1341839497-72h2iknf4m.ap-shanghai.tencentscf.com/) | Free, Pro ¥199/月 |
+| cn-aigc-detector | [AI内容检测](https://1341839497-gi14eledh6.ap-shanghai.tencentscf.com/) | Free 5次/月, Pro ¥99/月 |
 
 ---
 
