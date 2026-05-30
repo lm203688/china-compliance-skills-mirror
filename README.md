@@ -2,6 +2,8 @@
 
 **4 premium AI agent skills for Chinese content compliance — used by 2000+ businesses.**
 
+⚡ **Subscribe on [爱发电/Afdian](https://afdian.com/a/hgt-compliance)** — Monthly plans from ¥49/month with auto-renewal via WeChat/Alipay.
+
 > Methodology + Detection Workflow + Result Interpretation — not just prompts, complete compliance loops.
 
 [![GitHub stars](https://img.shields.io/github/stars/lm203688/china-compliance-skills-mirror?style=social)](https://github.com/lm203688/china-compliance-skills-mirror/stargazers)
